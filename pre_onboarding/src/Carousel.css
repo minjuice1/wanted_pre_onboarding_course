@@ -1,6 +1,6 @@
 .CarouselBox {
 	width: 100%;
-	height: 300px;
+	height: 320px;
 	padding-top: 25px;
 }
 
@@ -8,15 +8,15 @@
 	position: relative;
 	display: block;
 	box-sizing: border-box;
-	background: chartreuse;
+	transform: translateX(0);
+	touch-action: pan-y;
 }
 
 .Banner {
-	padding: 0px 50px;
+	padding: 0px 40px;
 	position: relative;
 	overflow: hidden;
 	display: block;
-	background: chocolate;
 }
 
 .CarouselInner {
@@ -28,6 +28,7 @@
 	top: 0;
 	display: block; */
 	background-color: #f8f8fa;
+	display: table-cell;
 }
 
 .Carousel {
@@ -38,28 +39,30 @@
 	/* margin: 0 auto; */
 	box-sizing: border-box;
 	padding: 0 12px;
+	cursor: pointer;
+	display: table-cell;
+}
+
+.Carousel > img {
 	border-radius: 5px;
 }
 
-.Carousel > div {
-	position: absolute;
-	bottom: 28px;
-	width: 330px;
-	height: 146px;
+.descBox {
+	position: initial;
 	border-radius: 4px;
 	background-color: #fff;
 	text-align: left;
 	left: 34px;
 }
 
-.Carousel > div > div:nth-child(1) {
+.descBox > div:nth-child(1) {
 	margin: 20px 20px 0 20px;
 	font-size: 20px;
 	line-height: 1.5;
 	font-weight: 700;
 }
 
-.Carousel > div > div:nth-child(2) {
+.descBox > div:nth-child(2) {
 	margin: 0 20px;
 	height: 44px;
 	font-size: 14px;
@@ -68,14 +71,14 @@
 	font-weight: 500;
 }
 
-.Carousel > div > hr {
+.descBox > hr {
 	background-color: #ececec;
 	height: 1px;
 	margin: 0;
 	border: none;
 }
 
-.Carousel .descBox > a {
+.descBox > a {
 	display: inline-flex;
 	margin: 6px 0 0 13px;
 	font-size: 14px;
@@ -88,13 +91,10 @@
 	padding: 6px 8px;
 	align-items: center;
 	box-sizing: border-box;
-}
-
-.Carousel .descBox > a > span {
 	cursor: pointer;
 }
 
-.Carousel .descBox > a > span:last-child > svg {
+.descBox > a > span:last-child > svg {
 	user-select: none;
 	width: 1em;
 	height: 1em;
@@ -103,31 +103,9 @@
 	margin: -2px -1px 0 2px;
 }
 
-/* side */
-/* .CarouselLeft {
-	flex: 5%;
-	height: 100%;
-	background-color: rbg(0, 0, 0, 0.6);
-	display: grid;
-	place-items: center;
-	color: white;
-} */
-
-.CarouselInner .CarouselRight {
-	/* flex: 5%;
-	height: 100%;
-	background-color: rbg(0, 0, 0, 0.6);
-	display: flex;
-	place-items: center;
-	color: red; */
-	/* width: 10px;
-	height: 10px;
-	background: red; */
-}
-
 /* button */
-.CarouselInner .arrowLeftBtn {
-	left: calc((100% - 1210px) / 2);
+.arrowLeftBtn {
+	left: calc((100% - 1200px) / 2);
 	justify-content: center;
 	position: absolute;
 	top: 120px;
@@ -141,8 +119,8 @@
 	border: none;
 }
 
-.CarouselInner .arrowRightBtn {
-	right: calc((100% - 1210px) / 2);
+.arrowRightBtn {
+	right: calc((100% - 1200px) / 2);
 	justify-content: center;
 	position: absolute;
 	top: 120px;
@@ -154,4 +132,54 @@
 	font-size: 16px;
 	cursor: pointer;
 	border: none;
+}
+
+@media (min-width: 1200px) {
+	.descBox {
+		position: absolute;
+		bottom: 28px;
+		width: 330px;
+		height: 146px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1200px), (max-width: 767px) {
+	.descBox {
+		text-align: center;
+	}
+	.descBox > div {
+		text-align: center;
+		margin-top: 10px;
+	}
+	.descBox > hr {
+		display: none;
+	}
+	.descBox > a {
+		text-align: center;
+		display: block;
+		height: 40px;
+		margin: 0;
+	}
+	.Carousel > div > div:nth-child(1) {
+		margin: 0;
+		margin-top: 20px;
+	}
+	.Carousel > div > div:nth-child(2) {
+		height: auto;
+		margin: 0;
+		margin-top: 6px;
+	}
+	.arrowLeftBtn {
+		display: none;
+	}
+	.arrowRightBtn {
+		display: none;
+	}
+	.Carousel > img {
+		border-radius: 5px;
+		width: inherit;
+		display: inline-block;
+		height: 180px;
+		object-fit: cover;
+	}
 }
