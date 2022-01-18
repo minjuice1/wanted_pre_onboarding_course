@@ -7,12 +7,17 @@ const Gnb = () => {
 				<div className="gap">
 					<nav className="nav">
 						<div className="menu">
-							<button>
-								<img src="https://static.wanted.co.kr/images/icon-menu.png" />
-							</button>
-							<span>wanted</span>
+							<div>
+								<button>
+									<img src="https://static.wanted.co.kr/images/icon-menu.png" />
+								</button>
+								<span>wanted</span>
+							</div>
 						</div>
 						<ul className="category">
+							<li>
+								<span>홈</span>
+							</li>
 							<li>
 								<span>채용</span>
 							</li>
@@ -184,6 +189,32 @@ const Gnb = () => {
 								</li>
 								<li>
 									<button>기업 서비스</button>
+								</li>
+								<li>
+									<button>
+										<svg
+											xmlns="https://www.w3.org/2000/svg"
+											xmlnsXlink="https://www.w3.org/1999/xlink"
+											width="18"
+											height="18"
+										>
+											<defs>
+												<path
+													id="a"
+													d="M9 7.5a1.5 1.5 0 1 1-.001 3.001A1.5 1.5 0 0 1 9 7.5zm5.05 0a1.5 1.5 0 1 1-.001 3.001A1.5 1.5 0 0 1 14.05 7.5zM4 7.5a1.5 1.5 0 1 1-.001 3.001A1.5 1.5 0 0 1 4 7.5z"
+												></path>
+											</defs>
+											<g fill="none" fillRule="evenodd">
+												<use
+													fill="#333"
+													fillRule="nonzero"
+													stroke="#333"
+													strokeWidth=".3"
+													xlinkHref="#a"
+												></use>
+											</g>
+										</svg>
+									</button>
 								</li>
 							</ul>
 						</aside>
