@@ -2,4 +2,4 @@
 
 
 
-[pre_onboarding](https://minju-wanted-pre-onboarding.netlify.app)
+[pre_onboarding project link] (https://minju-wanted-pre-onboarding.netlify.app) : "https://minju-wanted-pre-onboarding.netlify.app"
