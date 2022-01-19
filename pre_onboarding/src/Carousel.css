@@ -1,3 +1,8 @@
+:root {
+	--slide-count: 9;
+	--slide-width: 50rem;
+}
+
 .CarouselBox {
 	width: 100%;
 	height: 320px;
@@ -8,35 +13,33 @@
 	position: relative;
 	display: block;
 	box-sizing: border-box;
-	transform: translateX(0);
 	touch-action: pan-y;
 }
 
 .Banner {
 	padding: 0px 40px;
 	position: relative;
-	overflow: hidden;
 	display: block;
+	height: 100%;
+	left: 50%;
+	list-style-type: none;
+	margin: 0;
+	transform: translateX(-50%);
+}
+
+.Carousel_Inactive > img {
+	filter: brightness(50%);
 }
 
 .CarouselInner {
-	/* opacity: 1;
-	transform: translate3d(-14035.5px, 0px, 0px);
-	width: 32319px;
-	position: relative;
-	left: 0;
-	top: 0;
-	display: block; */
-	background-color: #f8f8fa;
 	display: table-cell;
+	transform: translateX(16%);
 }
 
 .Carousel {
 	position: relative;
 	width: 1060px;
 	height: 300px;
-	background: white;
-	/* margin: 0 auto; */
 	box-sizing: border-box;
 	padding: 0 12px;
 	cursor: pointer;
@@ -44,7 +47,13 @@
 }
 
 .Carousel > img {
+	background: rgb(0, 0, 0, 0.5);
 	border-radius: 5px;
+	z-index: 100;
+}
+
+.descBox_Inactive {
+	opacity: 0;
 }
 
 .descBox {
@@ -143,7 +152,10 @@
 	}
 }
 
-@media (min-width: 768px) and (max-width: 1200px), (max-width: 767px) {
+@media (min-width: 768px) and (max-width: 1200px) {
+	.Carousel {
+		width: auto;
+	}
 	.descBox {
 		text-align: center;
 	}
@@ -181,5 +193,69 @@
 		display: inline-block;
 		height: 180px;
 		object-fit: cover;
+	}
+	.Carousel_Inactive > img {
+		border-radius: 5px;
+		width: inherit;
+		display: inline-block;
+		height: 180px;
+		object-fit: cover;
+	}
+	.CarouselInner {
+		transform: translateX(12%);
+	}
+}
+
+@media (max-width: 768px) {
+	.Carousel {
+		width: 360px;
+	}
+	.descBox {
+		text-align: center;
+	}
+	.descBox > div {
+		text-align: center;
+		margin-top: 10px;
+	}
+	.descBox > hr {
+		display: none;
+	}
+	.descBox > a {
+		text-align: center;
+		display: block;
+		height: 40px;
+		margin: 0;
+	}
+	.Carousel > div > div:nth-child(1) {
+		margin: 0;
+		margin-top: 20px;
+	}
+	.Carousel > div > div:nth-child(2) {
+		height: auto;
+		margin: 0;
+		margin-top: 6px;
+	}
+	.arrowLeftBtn {
+		display: none;
+	}
+	.arrowRightBtn {
+		display: none;
+	}
+	.Carousel > img {
+		border-radius: 5px;
+		width: 340px;
+		display: inline-block;
+		height: 180px;
+		object-fit: cover;
+	}
+	.Carousel_Inactive > img {
+		border-radius: 5px;
+		width: 340px;
+		display: inline-block;
+		height: 180px;
+		object-fit: cover;
+	}
+	.CarouselInner {
+		transform: translateX(10%);
 	}
 }

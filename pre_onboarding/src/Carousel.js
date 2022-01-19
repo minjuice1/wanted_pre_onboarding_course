@@ -1,5 +1,6 @@
 import React, { PureComponent, useState } from "react";
 import { images } from "../src/CarouselData";
+
 import "./Carousel.css";
 import CarouselList from "./CarouselList";
 
@@ -7,7 +8,6 @@ const DIRECTIOM_TYPE = {
 	next: "NEXT",
 	prev: "PREV",
 };
-
 class Carousel extends PureComponent {
 	constructor(props) {
 		super(props);
@@ -16,6 +16,9 @@ class Carousel extends PureComponent {
 			current: 2,
 			needTransition: true,
 			direction: "",
+			isDown: false,
+			startX: "",
+			scrollLeft: "",
 		};
 	}
 
@@ -81,7 +84,6 @@ class Carousel extends PureComponent {
 			current: _current,
 			direction: DIRECTIOM_TYPE.prev,
 		});
-		console.log(current);
 	};
 
 	transLateVal = () => {
@@ -112,9 +114,10 @@ class Carousel extends PureComponent {
 								style={this.sliderStyle()}
 								onTransitionEnd={this.handleSliderTranslateEnd}
 							>
-								{this.state.images.map((pos, i) => (
-									<CarouselList key={i} pos={pos} />
-								))}
+								{this.state.images.map((pos, i) => {
+									const active = i === this.state.current ? true : false;
+									return <CarouselList key={i} pos={pos} active={active} />;
+								})}
 							</div>
 						</div>
 						<div>
