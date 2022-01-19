@@ -1,8 +1,3 @@
-:root {
-	--slide-count: 9;
-	--slide-width: 50rem;
-}
-
 .CarouselBox {
 	width: 100%;
 	height: 320px;
